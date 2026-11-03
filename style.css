@@ -1,0 +1,510 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    background: #0f0f0f;
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 20px;
+    background: #181818;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+#logo {
+    cursor: pointer;
+    font-size: 28px;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: url('images/BG_food2.png') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* DARK OVERLAY */
+.hero .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff4d4d;
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-left: 60px;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+    color: #ff4d4d;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #ddd;
+}
+
+/* BUTTON */
+.hero-content button {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-content button:hover {
+    background: #ff1a1a;
+    transform: scale(1.05);
+}
+
+/* MENU SECTION */
+#menuSection {
+    padding: 40px 20px;
+    animation: fadeIn 0.6s ease;
+}
+
+/* FILTERS */
+.filters {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filters button {
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    border: 1px solid #444;
+    background: transparent;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filters button.active,
+.filters button:hover {
+    background: #ff2e2e;
+    color: white;
+    border: none;
+}
+
+/* MENU GRID */
+#menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 20px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #menu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    #menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* CARD */
+.item {
+    background: linear-gradient(145deg, #1a1a1a, #111);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+    transition: 0.25s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+
+/* REMOVE FLASH */
+.item {
+    animation: none !important;
+}
+
+/* HOVER */
+.item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(255,0,0,0.2);
+}
+
+/* IMAGE */
+.img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.item:hover .img {
+    transform: scale(1.05);
+}
+
+/* TEXT */
+.item h3 {
+    padding: 12px 15px 5px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.item p {
+    padding: 0 15px;
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* BUTTON */
+.item button {
+    margin: 15px;
+    width: calc(100% - 30px);
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(45deg, #ff2e2e, #ff0000);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.item button:hover {
+    background: linear-gradient(45deg, #ff0000, #cc0000);
+}
+
+/* QTY BOX */
+.qtyBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 15px;
+}
+
+.qtyBox span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.qtyBox button {
+    padding: 5px 12px;
+    background: #ff2e2e;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.qtyBox button:hover {
+    background: #ff0000;
+}
+
+/* 🚫 DISABLED ITEM */
+.disabledItem {
+    opacity: 0.5;
+    filter: grayscale(100%) blur(1px);
+}
+
+/* 🚫 NOT AVAILABLE BUTTON */
+.notAvailable {
+    background: #555 !important;
+    cursor: not-allowed;
+}
+
+/* CART ICON */
+#cartIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff2e2e;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 0 15px rgba(255,0,0,0.5);
+    z-index: 999;
+}
+
+#cartIcon span {
+    background: black;
+    padding: 3px 8px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+/* CART POPUP */
+#cartPopup {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 280px;
+    background: #1c1c1c;
+    padding: 15px;
+    border-radius: 12px;
+    display: none;
+    z-index: 999;
+}
+
+#cartPopup input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+#cartPopup button {
+    width: 100%;
+    padding: 10px;
+    background: #00c853;
+    border: none;
+    color: white;
+    border-radius: 6px;
+}
+
+/* TIMELINE */
+.timeline {
+    padding: 40px 20px;
+}
+
+.timeline h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timeline-item {
+    margin: 20px auto;
+    width: 80%;
+    height: 200px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #222;
+}
+
+.timeline-item .img {
+    height: 100%;
+}
+
+.timeline-item .info {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.timeline-item:hover .info {
+    opacity: 1;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* SCROLL */
+html {
+    scroll-behavior: smooth;
+}
+
+/* map section*/
+
+/* MAP SECTION */
+.mapSection {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.mapSection h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ff4d4d;
+}
+
+.mapSection p {
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+/* CENTER MAP */
+.mapContainer {
+    display: flex;
+    justify-content: center;
+}
+
+/* MAP STYLE */
+.mapContainer iframe {
+    width: 80%;
+    max-width: 700px;
+    height: 400px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+/*review section */
+
+.reviewSection {
+    padding: 80px 20px;
+    background: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TITLE */
+.reviewSection h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.reviewSection h3 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+
+/* FORM BOX */
+.reviewForm {
+    width: 100%;
+    max-width: 600px;
+    background: #161616;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* INPUTS */
+.reviewForm input,
+.reviewForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #1c1c1c;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* TEXTAREA */
+.reviewForm textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* BUTTON */
+.reviewForm button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #ff2e2e, #ff0000);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.reviewForm button:hover {
+    transform: scale(1.03);
+}
+
+/* REVIEW CARDS */
+.reviewCard {
+    width: 100%;
+    max-width: 600px;
+    background: #161616;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border-left: 4px solid #ff4d4d;
+}
+
+/* NAME */
+.reviewCard h4 {
+    color: #ff4d4d;
+    margin-bottom: 5px;
+}
+
+/* TEXT */
+.reviewCard p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+
+/* star reviews*/
+
+.starRating {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 28px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.starRating span {
+    color: #444;
+    transition: 0.3s;
+}
+
+.starRating span.active {
+    color: #e3e70f;
+}
