@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 /* ================= DB CONNECT ================= */
-mongoose.connect("mongodb://127.0.0.1:27017/foodbites")
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
 
